@@ -48,7 +48,11 @@ class PlanoController{
         }
 
         that._realizaCalculo(param).then((data) => {
-            res.json({message: 'Calculo realizado com sucesso', erro: [], retorno: data })  
+            if(data.length > 0){
+                res.json({message: 'Calculo realizado com sucesso', erro: [], retorno: data })  
+            }else{
+                res.json({message: 'Nenhuma tarifa cadastrada para essa ligação', erro: [{message: 'Nenhuma tarifa cadastrada para essa ligação'}], retorno: [] })  
+            }
             next();
             return;
         });
@@ -61,6 +65,10 @@ class PlanoController{
         return new Promise(function(resolve, reject){
             
             that.tarifaModel.consult(param.origem, param.destino).then((tarifa) => {
+                if(tarifa.length == 0){
+                    resolve([])
+                    return;
+                }
                 that.planoModel.list().then((planos) => {
 
                     var retorno = [];

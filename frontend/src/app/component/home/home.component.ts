@@ -79,7 +79,11 @@ export class HomeComponent implements OnInit {
       that.error(erros);
     }else{
       that.planoService.consult(param).then((retorno) => {
-        that.resultado = retorno.retorno
+        if(retorno.erro.length > 0 ){
+          that.error(retorno.erro[0].message)
+        }else{
+          that.resultado = retorno.retorno
+        }
       })
     }
   }
