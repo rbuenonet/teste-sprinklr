@@ -1,0 +1,25 @@
+header > h2{
+    float: left;
+}
+
+header > button{
+    position: absolute;
+    right: 0;
+}
+.w3-container{
+    padding-bottom: 20px;
+}
+
+.w3-container tr{
+    cursor: pointer;
+}
+
+div.time > input{
+    float: left;
+    width: 80%;
+}
+
+div.time > button{
+    position: absolute;
+    right: 10px;
+}

@@ -1,0 +1,45 @@
+<div class="img-logo">
+  <img src="../../../assets/img/logo.png"  class="w3-image"/>
+</div>
+
+<div class="filtros">
+  <div class="buttons">
+    <div class="button">
+      <span>Origem</span>
+      <button class="w3-btn w3-padding-large w3-round-large w3-gray" (click)="openModal('Origem', 'list', 0, cidades)">{{buttons[0].button}}</button>
+    </div>
+    <div class="button">
+      <span>Destino</span>
+      <button class="w3-btn w3-padding-large w3-round-large w3-gray" (click)="openModal('Destino', 'list', 1, cidades)">{{buttons[1].button}}</button>
+    </div>
+    <div class="button">
+      <span>Tempo</span>
+      <button class="w3-btn w3-padding-large w3-round-large w3-gray" (click)="openModal('Tempo', 'time', 2)">{{buttons[2].button}}</button>
+    </div>
+    <div class="button">
+      <span>Plano</span>
+      <button class="w3-btn w3-padding-large w3-round-large w3-gray" (click)="openModal('Plano', 'list', 3, planos)">{{buttons[3].button}}</button>
+    </div>
+  </div>
+  <div class="btn-calc">
+    <button class="w3-btn w3-block w3-padding-large w3-round-large w3-gray" (click)="calc()">Calcular</button>
+  </div>
+</div>
+
+
+<div class="resultados">
+  <table class="w3-table">
+    <tr>
+      <th *ngFor="let title of resultado">{{title.name}}</th>
+    </tr>
+    <tr>
+      <td *ngFor="let body of resultado">
+        <span *ngIf="body.value != ' - '"> {{body.value | currency:'BRL':true:'1.2-2'}} </span>
+        <span *ngIf="body.value == ' - '"> {{body.value}} </span>
+      </td>
+    </tr>
+  </table>
+</div>
+
+
+<app-modal [info]="modal" (option)="change($event);"></app-modal>

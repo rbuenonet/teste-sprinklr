@@ -1,0 +1,26 @@
+<div class="w3-modal" [ngStyle]="{'display' : info.display }">
+  <div class="w3-modal-content  w3-animate-zoom">
+    <header class="w3-container w3-gray"> 
+      <h2>{{info.name}}</h2>
+      <button class="w3-button w3-large" (click)="close()">X</button>
+    </header>
+
+    <div class="w3-container">
+      <div class="w3-section">
+
+<!--list-->
+        <table class="w3-table w3-striped w3-bordered" *ngIf="info.type == 'list'">
+          <tr *ngFor="let option of info.object" (click)="select(option)">
+            <td> {{option.list}} </td>
+          </tr>
+        </table>
+
+<!--time-->
+        <div *ngIf="info.type == 'time'" class="time">
+          <input class="w3-input w3-border" type="text" placeholder="Minutos" [(ngModel)]="time" maxlength="3">
+          <button class="w3-button w3-circle w3-gray" (click)="valueTime()">ok</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

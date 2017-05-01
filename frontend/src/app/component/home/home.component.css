@@ -1,0 +1,61 @@
+.img-logo{
+    padding: 50px 0;
+}
+
+.img-logo img{
+    display: block;
+    margin: auto;
+    max-width: 500px;
+}
+
+.filtros{
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.filtros .buttons{
+    display: block;
+    margin: auto;  
+    width: 420px;
+}
+
+.filtros .buttons .button .w3-btn{
+    width: 100px;
+}
+
+.button{
+    float: left;
+    margin-right: 5px; 
+    text-align: center;
+    width: 100px
+}
+
+.btn-calc{
+    display: block;
+    margin: auto;  
+    padding-top: 80px;
+    width:50%;
+}
+
+.resultados{
+    display: block;
+    margin: auto;
+    max-width: 500px;
+}
+
+.resultados th, .resultados td{
+    color: #bbb;
+    text-align: center !important;
+}
+
+
+
+
+
+
+
+
+/* uteis */
+.text-center{
+    text-align: center;
+}
