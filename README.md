@@ -1,5 +1,5 @@
 # Teste Sprinklr
-Teste Sprinklr com as tecnologias Nodejs + Mysql + Angular 2
+Teste para entrevista para empresa Sprinklr com as tecnologias Nodejs + Mysql + Angular 2
 
 #### Documentos
   - O documento com a descrição do teste está na pasta "_documentos"
